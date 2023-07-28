@@ -4,8 +4,8 @@ import Letter from "./Letter";
 function Alphabet() {
     return (
         <div className="alphabet">
-            {alphabet.map((letter) => {
-                return <Letter key={letter} letter={letter} />;
+            {alphabet.map((letter, index) => {
+                return <Letter key={index} letter={letter} />;
             })}
         </div>
     );

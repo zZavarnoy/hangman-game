@@ -39,3 +39,15 @@ button {
     color: bisque;
     background-color: #000;
 }
+
+.img-box {
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.word-by-letter {
+    margin: 5px;
+    border-bottom: solid crimson 1px;
+}

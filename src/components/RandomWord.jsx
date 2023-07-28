@@ -1,11 +1,16 @@
-import words from "../data/words";
-
-function RandomWord() {
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-    const id = getRandomInt(words.length);
-    return <div className="word">{words[id]}</div>;
+function RandomWord({ word }) {
+    return (
+        <div className="word">
+            {console.log(word)}
+            {word.split("").map((letter, index) => {
+                return (
+                    <span key={index} className="word-by-letter">
+                        {letter}
+                    </span>
+                );
+            })}
+        </div>
+    );
 }
 
 export default RandomWord;
