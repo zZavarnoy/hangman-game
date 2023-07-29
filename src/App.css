@@ -51,3 +51,6 @@ button {
     margin: 5px;
     border-bottom: solid crimson 1px;
 }
+.green-letter {
+    background-color: green;
+}

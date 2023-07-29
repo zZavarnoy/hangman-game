@@ -1,10 +1,10 @@
-function RandomWord({ word }) {
+function WordByLetter({ word, letter }) {
     return (
         <div className="word">
             {console.log(word)}
-            {word.split("").map((letter, index) => {
+            {word.map((letter, index) => {
                 return (
-                    <span key={index} className="word-by-letter">
+                    <span key={index} id={index} className="word-by-letter">
                         {letter}
                     </span>
                 );
@@ -13,4 +13,4 @@ function RandomWord({ word }) {
     );
 }
 
-export default RandomWord;
+export default WordByLetter;
