@@ -27,7 +27,7 @@ button {
 }
 
 .letter {
-    width: 30px;
+    width: 40px;
     font-size: 32px;
     margin: 10px;
     padding: 5px;
@@ -49,8 +49,4 @@ button {
 
 .word-by-letter {
     margin: 5px;
-    border-bottom: solid crimson 1px;
-}
-.green-letter {
-    background-color: green;
 }

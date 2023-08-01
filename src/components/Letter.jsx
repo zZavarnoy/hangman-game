@@ -1,13 +1,22 @@
-function Letter({ letter }) {
+import { useState } from "react";
+
+function Letter({ letter, searchLetter }) {
+    const [disabled, setDisabled] = useState(false);
+
     const trackingLetterHandler = (e) => {
         const tracking = e.target.innerHTML;
-        console.log(tracking);
+        searchLetter(tracking);
+        setDisabled(true);
     };
 
     return (
-        <span className="letter" onClick={trackingLetterHandler}>
+        <button
+            className="letter"
+            onClick={trackingLetterHandler}
+            disabled={disabled}
+        >
             {letter}
-        </span>
+        </button>
     );
 }
 

@@ -1,11 +1,10 @@
-function WordByLetter({ word, letter }) {
+function WordByLetter({ word, correctLetters }) {
     return (
         <div className="word">
-            {console.log(word)}
             {word.map((letter, index) => {
                 return (
-                    <span key={index} id={index} className="word-by-letter">
-                        {letter}
+                    <span key={index} className="word-by-letter">
+                        {correctLetters.includes(letter) ? letter : "_"}
                     </span>
                 );
             })}
