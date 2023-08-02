@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function Letter({ letter, searchLetter }) {
     const [disabled, setDisabled] = useState(false);
-
     const trackingLetterHandler = (e) => {
         const tracking = e.target.innerHTML;
         searchLetter(tracking);
