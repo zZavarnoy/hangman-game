@@ -37,10 +37,24 @@ function App() {
         }
     };
 
+    const wordWithoutRepeatingLetters = word
+        .split("")
+        .filter(function (item, pos) {
+            return word.indexOf(item) === pos;
+        });
+
     useEffect(() => {
         if (errorCounter === 10) {
-            alert(`You lose. Word is "${word}"`);
-            setWordHandler();
+            setTimeout(() => {
+                alert(`You lose. Word is "${word}"`);
+                setWordHandler();
+            }, 250);
+        }
+        if (wordWithoutRepeatingLetters.length === correctLetters.length) {
+            setTimeout(() => {
+                alert(`You win. Word is "${word}"`);
+                setWordHandler();
+            }, 250);
         }
     });
 
@@ -50,7 +64,10 @@ function App() {
             <ImgBox errorCounter={errorCounter} />
             <WordByLetter word={word} correctLetters={correctLetters} />
             <button onClick={setWordHandler}>Get new word</button>
-            <Alphabet searchLetter={searchLetterHandler} />
+            <Alphabet
+                searchLetter={searchLetterHandler}
+                correctLetters={correctLetters}
+            />
         </div>
     );
 }

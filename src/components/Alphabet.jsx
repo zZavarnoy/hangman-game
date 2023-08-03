@@ -1,7 +1,7 @@
 import alphabet from "../data/alphabet";
 import Letter from "./Letter";
 
-function Alphabet({ searchLetter }) {
+function Alphabet({ searchLetter, correctLetters }) {
     return (
         <div className="alphabet">
             {alphabet.map((letter, index) => {
@@ -10,6 +10,7 @@ function Alphabet({ searchLetter }) {
                         key={index}
                         letter={letter}
                         searchLetter={searchLetter}
+                        correctLetters={correctLetters}
                     />
                 );
             })}

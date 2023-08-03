@@ -1,3 +1,3 @@
-const words = ["apple", "banana", "cucumber"];
+const words = require("an-array-of-english-words");
 
 export default words;
