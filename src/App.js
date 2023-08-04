@@ -26,22 +26,13 @@ function App() {
 
     const searchLetterHandler = (letter) => {
         if (word.includes(letter)) {
-            if (!correctLetters.includes(letter)) {
-                setCorrectLetters((correctLetters) => [
-                    ...correctLetters,
-                    letter,
-                ]);
-            }
-        } else {
-            setErrorCounter(errorCounter + 1);
-        }
+            setCorrectLetters([...correctLetters, letter]);
+        } else setErrorCounter(errorCounter + 1);
     };
 
-    const wordWithoutRepeatingLetters = word
-        .split("")
-        .filter(function (item, pos) {
-            return word.indexOf(item) === pos;
-        });
+    const wordWithoutRepeatingLetters = Array.from(
+        new Set(word.toLowerCase().split(""))
+    );
 
     useEffect(() => {
         if (errorCounter === 10) {
